@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SplashPage from './SplashPage';
 import KegList from './KegList';
 import AddKeg from './AddKeg';
@@ -12,13 +13,12 @@ import nicebar3 from '../assets/nicebar3.jpg';
 import nicebar4 from '../assets/nicebar4.jpg';
 import nicebar5 from '../assets/nicebar5.jpg';
 import nicebar6 from '../assets/nicebar6.jpg';
-import JCVD from '../assets/JCVD.jpg';
+import * as a from '../actions/actions';
 
 class KegControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      masterKegList: [],
       splashPageVisible: true,
       kegFormVisible: false,
       kegListVisible: false,
@@ -82,30 +82,29 @@ class KegControl extends React.Component {
   }
   handleEditClick = () => {
     this.setState({editing: true});
-    console.log(this.state.selectedKeg)
   }
   handleEditingKegInList = (kegToEdit)=> {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
+    const {dispatch} = this.props;
+    let action = a.addKeg(kegToEdit);
+    dispatch(action);
     this.setState({
-      masterKegList: editedMasterKegList,
       editing: false,
       selectedKeg: null
     });
   }
   handleDeleteClick = (kegId) => {
-    const newMasterKegList = this.state.masterKegList.filter(
-      keg => keg.id !== kegId);
-    this.setState({
-      masterKegList: newMasterKegList, 
-      selectedKeg: null});
+    const {dispatch} = this.props;
+    let action = a.deleteKeg(kegId);
+    dispatch(action);
+    this.setState({ 
+      selectedKeg: null
+    });
   }
   handleAddingNewKegToList = (newKeg) =>{
-    const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    // const newMasterKegList = [...this.state.masterKegList, newKeg];
+    const {dispatch} = this.props;
+    const action = a.addKeg(newKeg);
+    dispatch(action);
     this.setState({
-      masterKegList: newMasterKegList, 
       kegFormVisible: false,
       kegListVisible: true
     })
@@ -272,4 +271,5 @@ class KegControl extends React.Component {
   }
 }
 
+KegControl = connect()(KegControl);
 export default KegControl;
