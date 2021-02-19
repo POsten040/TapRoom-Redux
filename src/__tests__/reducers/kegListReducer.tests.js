@@ -38,9 +38,8 @@ describe('kegListReducer', () => {
       pintsLeft,
       id
       }
-    expect(kegListReducer({}, action)).toBe({
+    expect(kegListReducer({}, action)).toEqual({
       3:{
-        type: c.ADD_KEG,
         brand,
         price,
         flavor,
