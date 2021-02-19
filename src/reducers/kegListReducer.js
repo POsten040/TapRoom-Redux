@@ -5,13 +5,15 @@ export default (state ={}, action) => {
   switch (action.type) {
     case c.ADD_POST:
       return Object.assign({}, state, {
-      // [id]: {
-      //   brand,
-      //   price,
-      //   flavor,
-      //   pintsLeft,
-      //   id
-      // }
+      [id]: {
+        brand,
+        price,
+        flavor,
+        pintsLeft,
+        id
+      }
     })
+    default: 
+      return state;
   }
 };
