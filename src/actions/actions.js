@@ -1,9 +1,10 @@
 import * as c from './actionTypes';
 
 export const addKeg = (kegToAdd) => {
-  const {brand, price, flavor, pintsLeft, id} = kegToAdd;
+  const {name, brand, price, flavor, pintsLeft, id} = kegToAdd;
   return {
     type: c.ADD_KEG,
+    name,
     brand,
     price,
     flavor,
@@ -20,9 +21,10 @@ export const deleteKeg = id => {
 }
 
 export const stockKeg = (kegToStock) => {
-  const {brand, price, flavor, pintsLeft, id} = kegToStock;
+  const {name, brand, price, flavor, pintsLeft, id} = kegToStock;
   return {
     type: c.ADD_KEG,
+    name,
     brand,
     price,
     flavor,
@@ -32,9 +34,10 @@ export const stockKeg = (kegToStock) => {
 }
 
 export const sellKeg = (kegToSell) => {
-  const {brand, price, flavor, pintsLeft, id} = kegToSell;
+  const {name, brand, price, flavor, pintsLeft, id} = kegToSell;
   return {
     type: c.ADD_KEG,
+    name,
     brand,
     price,
     flavor,

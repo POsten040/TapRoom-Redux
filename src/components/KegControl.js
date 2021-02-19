@@ -71,7 +71,7 @@ class KegControl extends React.Component {
     }
   }
   viewKegList= () => {
-    if(this.state.masterKegList.length == 0){
+    if(this.props.masterKegList.length == 0){
       alert("No Kegs Yet!");
     } else {
       this.setState({
@@ -118,9 +118,7 @@ class KegControl extends React.Component {
     });
   }
   handleSellClick = (id) => {
-    let kegToSell = this.state.masterKegList.filter(
-      keg => keg.id === id)[0];
-      console.log(kegToSell.pintsLeft)
+    let kegToSell = this.props.masterKegList[id]
       if(kegToSell.pintsLeft <= 0){
         console.log("sold out")
         alert("All Sold Out Boss");
@@ -132,8 +130,7 @@ class KegControl extends React.Component {
     }
   }
   handleStockClick = (id) => {
-    let kegToStock = this.state.masterKegList.filter(
-      keg => keg.id === id)[0];
+    let kegToStock = this.props.masterKegList[id]
       if(kegToStock.pintsLeft >= 120){
         alert("This Keg Is Full Boss");
       } else {

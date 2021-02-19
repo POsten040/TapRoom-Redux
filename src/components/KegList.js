@@ -17,10 +17,11 @@ function KegList(props){
   }
   return (
     <React.Fragment>
-      <div className="hover" style={formStyle}>
+      <div style={formStyle}>
         <h1>Keg List</h1>
         {Object.values(props.kegList).map((keg) =>
-        <div style={kegStyle}>
+        <div className="hover" style={kegStyle}>
+          {console.log(keg)}
           <Keg
             whenKegClicked = { props.onKegSelection}
             name={keg.name}

@@ -5,6 +5,7 @@ describe('kegListReducer', () => {
   let action;
   const currentState = {
     1: {
+      name: 'kevin',
       brand: 'BrewMaster',
       price: 100,
       flavor: 'good',
@@ -12,6 +13,7 @@ describe('kegListReducer', () => {
       id: 1
     },
     2: {
+      name: 'kevin',
       brand: 'MasterBrew',
       price: 10,
       flavor: 'beer',
@@ -20,6 +22,7 @@ describe('kegListReducer', () => {
     }
   }
   const KegData = {
+    name: 'kevin',
     brand: 'BrewMaster',
     price: 100,
     flavor: 'High Octane',
@@ -39,6 +42,7 @@ describe('kegListReducer', () => {
     action = a.deleteKeg(1)
     expect(kegListReducer(currentState, action)).toEqual({
       2: {
+        name: 'kevin',
         brand: 'MasterBrew',
         price: 10,
         flavor: 'beer',
@@ -51,6 +55,7 @@ describe('kegListReducer', () => {
     action = a.stockKeg(KegData);
     expect(kegListReducer({}, action)).toEqual({
       [3]:{
+        name: 'kevin',
         brand: 'BrewMaster',
         price: 100,
         flavor: 'High Octane',
@@ -63,6 +68,7 @@ describe('kegListReducer', () => {
     action = a.sellKeg(KegData);
     expect(kegListReducer({}, action)).toEqual({
       [3]:{
+        name: 'kevin',
         brand: 'BrewMaster',
         price: 100,
         flavor: 'High Octane',
