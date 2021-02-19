@@ -20,13 +20,11 @@ function KegList(props){
       <div style={formStyle}>
         <h1>Keg List</h1>
         {Object.values(props.kegList).map((keg) =>
-        <div className="hover" style={kegStyle}>
-          {console.log(keg)}
+        <div key={keg.id} className="hover" style={kegStyle}>
           <Keg
             whenKegClicked = { props.onKegSelection}
             name={keg.name}
             id={keg.id}
-            key={keg.id}
           />
         </div>
         )}

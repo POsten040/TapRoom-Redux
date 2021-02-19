@@ -1,5 +1,5 @@
 {
-  "name": "TapRoom",
+  "name": "TapRoom-Redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

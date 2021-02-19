@@ -120,7 +120,6 @@ class KegControl extends React.Component {
   handleSellClick = (id) => {
     let kegToSell = this.props.masterKegList[id]
       if(kegToSell.pintsLeft <= 0){
-        console.log("sold out")
         alert("All Sold Out Boss");
       } else {
       kegToSell.pintsLeft = kegToSell.pintsLeft -1;
