@@ -1,5 +1,9 @@
 import * as c from './actionTypes';
 
+export const toggleBool = (bool) => {
+  return bool;
+}
+
 export const addKeg = (kegToAdd) => {
   const {name, brand, price, flavor, pintsLeft, id} = kegToAdd;
   return {

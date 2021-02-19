@@ -1,16 +1,20 @@
 import * as a from './../../actions/actions';
 import * as c from './../../actions/actionTypes';
 
-describe('discussion forum actions', () => {
+describe('TapRoom actions', () => {
 
-  it('deleteKeg should create DELETE_KEG action', () => {
+  test('deleteKeg should create DELETE_KEG action', () => {
       expect(a.deleteKeg(1)).toEqual({
         type: c.DELETE_KEG,
         id: 1
     });
   });
+  test('toggleBool should toggle the boolean passed in', () => {
+    const bool = true;
+    expect(a.toggleBool(bool)).toEqual(false)
+  })
 
-  it('addKeg should create ADD_KEG action', () => {
+  test('addKeg should create ADD_KEG action', () => {
     expect(a.addKeg({ 
       brand: 'MegaBeer', 
       price: '1000000', 
@@ -26,5 +30,5 @@ describe('discussion forum actions', () => {
       pintsLeft: 120,
       id: 1
     });
-  });
+  })
 });
