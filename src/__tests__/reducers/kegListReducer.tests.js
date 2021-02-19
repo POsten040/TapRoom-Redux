@@ -1,5 +1,6 @@
 import kegListReducer from '../../reducers/kegListReducer';
 import * as c from '../../actions/actionTypes';
+import * as a from '../../actions/actions';
 
 describe('kegListReducer', () => {
   let action;
@@ -19,7 +20,8 @@ describe('kegListReducer', () => {
       id: 2
     }
   }
-  const KegData = {brand: 'BrewMaster',
+  const KegData = {
+    brand: 'BrewMaster',
     price: 100,
     flavor: 'High Octane',
     pintsLeft: 1,
@@ -29,30 +31,14 @@ describe('kegListReducer', () => {
     expect(kegListReducer({}, {type:null})).toEqual({})
   });
   test('should add new keg to masterKegList', () => {
-    const {brand, price, flavor, pintsLeft, id} = KegData;
-    action = {
-      type: c.ADD_KEG,
-      brand,
-      price,
-      flavor,
-      pintsLeft,
-      id
-      }
+    // const {brand, price, flavor, pintsLeft, id} = KegData;
+    action = a.addKeg(KegData)
     expect(kegListReducer({}, action)).toEqual({
-      3:{
-        brand,
-        price,
-        flavor,
-        pintsLeft,
-        id
-      }
+      3:KegData
     })
   })
   test('should delete keg from masterKegList', () => {
-    action = {
-      type: c.DELETE_KEG,
-      id: 1
-    }
+    action = a.deleteKeg(1)
     expect(kegListReducer(currentState, action)).toEqual({
       2: {
         brand: 'MasterBrew',
@@ -63,4 +49,16 @@ describe('kegListReducer', () => {
       }
     })
   })
+  test('should increase pintsLeft property of keg by 1', () => {
+    action = a.stockKeg(KegData);
+    expect(kegListReducer({}, action)).toEqual({
+      [3]:{
+        brand: 'BrewMaster',
+        price: 100,
+        flavor: 'High Octane',
+        pintsLeft: 2,
+        id: 3
+      }
+    })
+  } )
 });
