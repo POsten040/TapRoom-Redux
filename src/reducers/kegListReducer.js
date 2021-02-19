@@ -13,6 +13,16 @@ export default (state ={}, action) => {
         id
       }
     })
+    case c.DELETE_KEG:
+      return Object.assign({}, state, {
+        // [id]: {
+        //   brand,
+        //   price,
+        //   flavor,
+        //   pintsLeft,
+        //   id
+        // }
+      })
     default: 
       return state;
   }

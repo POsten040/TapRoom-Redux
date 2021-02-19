@@ -48,4 +48,19 @@ describe('kegListReducer', () => {
       }
     })
   })
+  test('should delete keg from masterKegList', () => {
+    action = {
+      type: c.DELETE_KEG,
+      id: 1
+    }
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {
+        brand: 'MasterBrew',
+        price: 10,
+        flavor: 'beer',
+        pintsLeft: 1,
+        id: 2
+      }
+    })
+  })
 });
