@@ -60,5 +60,17 @@ describe('kegListReducer', () => {
         id: 3
       }
     })
-  } )
+  })
+  test('should decrease pintsLeft property of keg by 1', () => {
+    action = a.sellKeg(KegData);
+    expect(kegListReducer({}, action)).toEqual({
+      [3]:{
+        brand: 'BrewMaster',
+        price: 100,
+        flavor: 'High Octane',
+        pintsLeft: 0,
+        id: 3
+      }
+    })
+  })
 });
