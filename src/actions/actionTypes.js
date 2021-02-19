@@ -1,2 +1,2 @@
-export const ADD_POST = 'ADD_POST';
-export const DELETE_POST = "DELETE_POST";
+export const ADD_KEG = 'ADD_KEG';
+export const DELETE_KEG = "DELETE_KEG";
