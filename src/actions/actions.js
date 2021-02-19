@@ -1,7 +1,7 @@
 import * as c from './actionTypes';
 
 export const toggleBool = (bool) => {
-  return bool;
+  return !bool;
 }
 
 export const addKeg = (kegToAdd) => {
