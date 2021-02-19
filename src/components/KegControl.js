@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 import SplashPage from './SplashPage';
 import KegList from './KegList';
 import AddKeg from './AddKeg';
@@ -110,8 +111,7 @@ class KegControl extends React.Component {
     })
   }
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(
-      keg => keg.id === id)[0];
+    const selectedKeg = this.props.masterKegList[id];
     this.setState({
       selectedKeg: selectedKeg,
       productFormVisible: true 
@@ -228,13 +228,13 @@ class KegControl extends React.Component {
       backgroundImage = backgroundImageArray[this.randomNumber()];
     } else if(this.state.kegListVisible){
       
-      currentState = <KegList kegList={this.state.masterKegList}  onKegSelection={this.handleChangingSelectedKeg}/>
+      currentState = <KegList kegList={this.props.masterKegList}  onKegSelection={this.handleChangingSelectedKeg}/>
       buttonText = "Add Another Keg";
       buttonStyle = blueButton;
       backgroundImage = backgroundImageArray[this.randomNumber()];
     } else {
       
-      currentState = <KegList kegList={this.state.masterKegList}  onKegSelection={this.handleChangingSelectedKeg}/>
+      currentState = <KegList kegList={this.props.masterKegList}  onKegSelection={this.handleChangingSelectedKeg}/>
       buttonText = "Add Another Keg";
       buttonStyle = blueButton;
       backgroundImage = backgroundImageArray[this.randomNumber()];
@@ -271,5 +271,15 @@ class KegControl extends React.Component {
   }
 }
 
-KegControl = connect()(KegControl);
+KegControl.propTypes = {
+  masterKegList: PropTypes.object,
+}
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 export default KegControl;

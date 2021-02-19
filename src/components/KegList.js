@@ -19,7 +19,7 @@ function KegList(props){
     <React.Fragment>
       <div className="hover" style={formStyle}>
         <h1>Keg List</h1>
-        {props.kegList.map((keg) =>
+        {Object.values(props.kegList).map((keg) =>
         <div style={kegStyle}>
           <Keg
             whenKegClicked = { props.onKegSelection}
@@ -35,7 +35,7 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  productlist: PropTypes.array,
+  kegList: PropTypes.object,
   onKegSelection: PropTypes.func
 };
 
