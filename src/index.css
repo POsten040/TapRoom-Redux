@@ -1,0 +1,66 @@
+
+body {
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+button.btn {
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* background-image: linear-gradient(#72d6dc, #20536b) ; */
+  font-size: larger;
+  box-shadow: 5px 5px 5px #614e5478;
+}
+
+@font-face {
+  font-family: "Modak";
+  src: local("Modak"),
+    url("./fonts/Modak-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+div.centered {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+div.hover :hover {
+  transform:scale(.98);
+  color: rgb(31, 27, 23);
+  background-color: rgb(95, 255, 122);
+  border-radius: 10px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+p.detailsText {
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 2px 2px rgba(26, 24, 24, 0.733);
+  color: white;
+  font-weight: 600;
+}
+
+span.detailsTextValue {
+  justify-self: right;
+  font-size: 20px;
+  text-decoration: underline;
+  color: rgb(13, 47, 65);
+  font-weight: 600;
+  width: 50%;
+}
+div#initialBackground {
+  background-color: teal;
+}
