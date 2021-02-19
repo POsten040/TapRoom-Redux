@@ -12,7 +12,7 @@ A single page website built with React, allowing the owner of a Bar kep track of
 ## **Suggested Software**
 * Code Editor like [Visual Studio Code](https://code.visualstudio.com/)
 
-## **Visual Diagram**
+## **Component Tree**
 ![Visual Diagram](./ReadmeAssets/Taproom-Diagram.PNG)
 
 ## **Installation Instructions**

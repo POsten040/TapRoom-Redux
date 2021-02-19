@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Animate } from "react-simple-animate";
-import { Button, Card, CardHeader, CardBody, CardFooter, Container, Row, Col } from 'reactstrap';
+import { Button, CardHeader, CardBody, Container, Row, Col } from 'reactstrap';
 
 function KegDetail(props){
   const { keg, onClickingDelete, onClickingEdit, onClickingSell, onClickingStock } = props;
@@ -43,7 +43,7 @@ function KegDetail(props){
               <Row>
                 <Col>
                   <Button style={yellowButton} onClick={()=> onClickingDelete(keg.id)}>Delete This keg</Button>
-                  <Button style={blueButton} onClick={()=> onClickingEdit(keg.id)}>Edit This Keg</Button>
+                  <Button style={blueButton} onClick={()=> onClickingEdit(keg)}>Edit This Keg</Button>
                 </Col>
                 <Col>
                   <Button style={yellowButton} onClick={()=> onClickingSell(keg.id)}>Sell One Pint</Button>

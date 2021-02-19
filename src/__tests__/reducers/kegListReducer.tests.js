@@ -21,7 +21,7 @@ describe('kegListReducer', () => {
       id: 2
     }
   }
-  const KegData = {
+  const kegData = {
     name: 'kevin',
     brand: 'BrewMaster',
     price: 100,
@@ -33,9 +33,37 @@ describe('kegListReducer', () => {
     expect(kegListReducer({}, {type:null})).toEqual({})
   });
   test('should add new keg to masterKegList', () => {
-    action = a.addKeg(KegData)
+    action = a.addKeg(kegData)
     expect(kegListReducer({}, action)).toEqual({
-      3:KegData
+      3:kegData
+    })
+  })
+  test('should edit an exisitng keg in masterKegList', () => {
+    action = a.addKeg({
+      name: 'CHANGED NAME',
+      brand: 'BrewMaster',
+      price: 100,
+      flavor: 'High Octane',
+      pintsLeft: 1,
+      id: 2
+    })
+    expect(kegListReducer(currentState, action)).toEqual({
+      1: {
+        name: 'kevin',
+        brand: 'BrewMaster',
+        price: 100,
+        flavor: 'good',
+        pintsLeft: 120,
+        id: 1
+      },
+      2: {
+        name: 'CHANGED NAME',
+        brand: 'BrewMaster',
+        price: 100,
+        flavor: 'High Octane',
+        pintsLeft: 1,
+        id: 2
+      }
     })
   })
   test('should delete keg from masterKegList', () => {
@@ -52,7 +80,7 @@ describe('kegListReducer', () => {
     })
   })
   test('should increase pintsLeft property of keg by 1', () => {
-    action = a.stockKeg(KegData);
+    action = a.stockKeg(kegData);
     expect(kegListReducer({}, action)).toEqual({
       [3]:{
         name: 'kevin',
@@ -65,7 +93,7 @@ describe('kegListReducer', () => {
     })
   })
   test('should decrease pintsLeft property of keg by 1', () => {
-    action = a.sellKeg(KegData);
+    action = a.sellKeg(kegData);
     expect(kegListReducer({}, action)).toEqual({
       [3]:{
         name: 'kevin',

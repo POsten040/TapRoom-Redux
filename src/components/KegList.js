@@ -22,7 +22,7 @@ function KegList(props){
         {Object.values(props.kegList).map((keg) =>
         <div key={keg.id} className="hover" style={kegStyle}>
           <Keg
-            whenKegClicked = { props.onKegSelection}
+            whenKegClicked = {props.onKegSelection}
             name={keg.name}
             id={keg.id}
           />

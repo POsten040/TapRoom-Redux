@@ -46,6 +46,7 @@ function ReusableForm(props) {
         <label>Stock(in pints)</label>
         <input defaultValue={kegToEdit.pintsLeft} type="number" name="pintsLeft" defaultValue="120"></input>
         <br />
+        <input type="hidden" name="id" value={kegToEdit.id}></input>
         <Button style={greenButton} id="formSubmitButton" className="btn" type="submit">{props.buttonText}</Button>
       </form>
     </>

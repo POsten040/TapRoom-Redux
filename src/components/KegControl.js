@@ -36,7 +36,7 @@ class KegControl extends React.Component {
     });
   }
   hideKegForm = ()=>{
-    if(this.state.masterKegList.length == 0){
+    if(this.props.masterKegList.length == 0){
       alert("No Kegs Yet!");
     } else{
       this.setState(({
