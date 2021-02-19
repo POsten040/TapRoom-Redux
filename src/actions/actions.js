@@ -26,7 +26,7 @@ export const stockKeg = (kegToStock) => {
     brand,
     price,
     flavor,
-    pintsLeft: 1,//pintsLeft + 1,
+    pintsLeft: pintsLeft + 1,
     id
   }
 }
