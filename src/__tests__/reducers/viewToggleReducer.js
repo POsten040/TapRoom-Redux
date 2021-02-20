@@ -6,7 +6,6 @@ describe('kegListReducer', () => {
       splashPageVisible: true,
       kegFormVisible: false,
       kegListVisible: false,
-      selectedKeg: null,
       editing: false
     }
   test('should toggle splash page visible', () => {
@@ -15,7 +14,6 @@ describe('kegListReducer', () => {
       splashPageVisible: false,
       kegFormVisible: true,
       kegListVisible: false,
-      selectedKeg: null,
       editing: false
     })
   })

@@ -38,10 +38,9 @@ describe('TapRoom actions', () => {
     expect(a.toggleSplashPage(initialState)).toEqual(
       {
         type:"TOGGLE_SPLASH_PAGE",
-        splashPageVisible: false,
-        kegFormVisible: true,
+        splashPageVisible: true,
+        kegFormVisible: false,
         kegListVisible: false,
-        selectedKeg: null,
         editing: false
     })
   })
