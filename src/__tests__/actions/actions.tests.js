@@ -29,11 +29,12 @@ describe('TapRoom actions', () => {
   })
   test('toggleSplashPage should return the toggleSplashPage action', () => {
     const initialState = {
-      splashPageVisible: true,
-      kegFormVisible: false,
-      kegListVisible: false,
-      selectedKeg: null,
-      editing: false
+        viewState:{
+        splashPageVisible: true,
+        kegFormVisible: false,
+        kegListVisible: false,
+        editing: false
+      }
     }
     expect(a.toggleSplashPage(initialState)).toEqual(
       {

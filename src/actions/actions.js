@@ -1,7 +1,12 @@
 import * as c from './actionTypes';
 
-export const toggleSplashPage = (viewBools) => {
-  const {splashPageVisible, kegFormVisible, kegListVisible, editing} = viewBools;
+export const toggleSplashPage = (currentState) => {
+  const { 
+    viewState : {splashPageVisible},
+    viewState : {kegFormVisible},
+    viewState : {kegListVisible},
+    viewState : {editing}
+  } = currentState; 
   return {
     type:c.TOGGLE_SPLASH_PAGE,
     splashPageVisible,

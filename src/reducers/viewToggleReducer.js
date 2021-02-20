@@ -5,7 +5,7 @@ export default (state ={}, action) => {
   switch (action.type) {
     case c.TOGGLE_SPLASH_PAGE:
       return Object.assign({}, state, {
-        ["viewState"]:{
+        "viewState":{
         splashPageVisible: !splashPageVisible,
         kegFormVisible: !kegFormVisible,
         kegListVisible,
