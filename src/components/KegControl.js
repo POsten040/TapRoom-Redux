@@ -58,7 +58,7 @@ class KegControl extends React.Component {
     })
   }
   handleClick = () => {
-    if(this.state.splashPageVisible){
+    if(this.props.splashPageVisible){
       this.hideSplashPage();
     } else if(this.state.kegFormVisible){
       this.hideKegForm();

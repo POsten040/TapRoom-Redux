@@ -9,11 +9,7 @@ describe('TapRoom actions', () => {
         id: 1
     });
   });
-  test('toggleBool should toggle the boolean passed in', () => {
-    const bool = true;
-    expect(a.toggleBool(bool)).toEqual(false)
-  })
-
+  
   test('addKeg should create ADD_KEG action', () => {
     expect(a.addKeg({ 
       brand: 'MegaBeer', 
@@ -30,5 +26,23 @@ describe('TapRoom actions', () => {
       pintsLeft: 120,
       id: 1
     });
+  })
+  test('toggleSplashPage should return the toggleSplashPage action', () => {
+    const initialState = {
+      splashPageVisible: true,
+      kegFormVisible: false,
+      kegListVisible: false,
+      selectedKeg: null,
+      editing: false
+    }
+    expect(a.toggleSplashPage(initialState)).toEqual(
+      {
+        type:"TOGGLE_SPLASH_PAGE",
+        splashPageVisible: false,
+        kegFormVisible: true,
+        kegListVisible: false,
+        selectedKeg: null,
+        editing: false
+    })
   })
 });

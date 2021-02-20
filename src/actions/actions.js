@@ -1,7 +1,14 @@
 import * as c from './actionTypes';
 
-export const toggleBool = (bool) => {
-  return !bool;
+export const toggleSplashPage = (viewBools) => {
+  const {splashPageVisible, kegFormVisible, kegListVisible, editing} = viewBools;
+  return {
+    type:c.TOGGLE_SPLASH_PAGE,
+    splashPageVisible,
+    kegFormVisible,
+    kegListVisible,
+    editing
+  };
 }
 
 export const addKeg = (kegToAdd) => {
